@@ -273,15 +273,41 @@
     const lightbox = new PhotoSwipeLightbox({
         gallery: '#showcase-gallery',
         children: 'a',
+        // Ensuring the module is imported correctly
         pswpModule: () => import('photoswipe')
+    });
+
+    // Correcting the logic and naming
+    lightbox.on('gettingData', (e) => {
+        const { data } = e;
+        const img = new Image();
+        img.src = data.src;
+
+        if (img.complete && img.width > 0) {
+            data.width = img.width;
+            data.height = img.height;
+        } else {
+            img.onload = () => {
+                data.width = img.width;
+                data.height = img.height;
+
+                // Use the 'pswp' instance from the lightbox object safely
+                if (lightbox.pswp) {
+                    lightbox.pswp.refreshSlideContent(e.index);
+                }
+            };
+        }
     });
 
     lightbox.init();
 
-    // Remote trigger for the "Explore Projects" button
-    window.openGallery = () => {
+    // Global trigger for the "Explore Projects" button
+    window.openGallery = (event) => {
+        if (event && event.preventDefault) event.preventDefault();
         const firstItem = document.querySelector('#showcase-gallery a');
-        if (firstItem) firstItem.click();
+        if (firstItem) {
+            firstItem.click();
+        }
     };
 </script>
 

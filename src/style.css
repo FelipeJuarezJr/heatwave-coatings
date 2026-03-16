@@ -21,3 +21,37 @@
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+/* Disable the tap highlight on gallery links */
+#showcase-gallery a {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+/* Force-disable all image transitions when PhotoSwipe is active */
+.pswp--open .group img,
+.pswp--animate_opacity .group img {
+    transition: none !important;
+    transform: none !important;
+    will-change: auto !important;
+}
+
+#showcase-gallery img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Stop all transitions when PhotoSwipe is opening or open */
+.pswp--open img,
+.pswp--animate_opacity img,
+.pswp--will-use-layers img {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    will-change: auto !important;
+}
+
+/* Disable Tailwind's group-hover scaling during the lightbox phase */
+.pswp--open .group:hover img {
+    transform: none !important;
+}
