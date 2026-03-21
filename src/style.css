@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     /* Core Colors */
@@ -28,30 +29,13 @@
     outline: none;
 }
 
-/* Force-disable all image transitions when PhotoSwipe is active */
-.pswp--open .group img,
-.pswp--animate_opacity .group img {
-    transition: none !important;
-    transform: none !important;
-    will-change: auto !important;
-}
-
 #showcase-gallery img {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-/* Stop all transitions when PhotoSwipe is opening or open */
-.pswp--open img,
-.pswp--animate_opacity img,
-.pswp--will-use-layers img {
+/* Fix ghost image by removing hover scale when lightbox opens */
+.pswp--open #showcase-gallery .group img {
+    transform: none !important;
     transition: none !important;
-    transform: none !important;
-    animation: none !important;
-    will-change: auto !important;
-}
-
-/* Disable Tailwind's group-hover scaling during the lightbox phase */
-.pswp--open .group:hover img {
-    transform: none !important;
 }
