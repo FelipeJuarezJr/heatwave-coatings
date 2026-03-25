@@ -24,6 +24,14 @@
             transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) !important;
         }
 
+        .pswp__zoom-wrap {
+            filter: blur(20px);
+        }
+
+        .pswp__zoom-wrap.is-active {
+            animation: pswpBlurToClear 1s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+        }
+
         @keyframes pswpBlurToClear {
             0% { filter: blur(20px); }
             100% { filter: blur(0px); }
@@ -322,11 +330,12 @@
     });
 
     lightbox.on('change', () => {
+        document.querySelectorAll('.pswp__zoom-wrap').forEach(w => w.classList.remove('is-active'));
+
         if (lightbox.pswp && lightbox.pswp.currSlide && lightbox.pswp.currSlide.container) {
             const wrap = lightbox.pswp.currSlide.container;
-            wrap.style.animation = 'none';
             void wrap.offsetHeight;
-            wrap.style.animation = 'pswpBlurToClear 1s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+            wrap.classList.add('is-active');
         }
     });
 
