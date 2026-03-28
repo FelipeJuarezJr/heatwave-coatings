@@ -107,10 +107,55 @@
                                 </p>
                             </div>
                             <div class="flex flex-wrap gap-4">
-                                <button
-                                    class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-orange-500 text-white text-base font-bold shadow-xl shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-orange-500/40 active:scale-95 transition-all duration-200">
-                                    <span>Get a Quote</span>
-                                </button>
+                                <div class="relative inline-block">
+                                    <button onclick="toggleQuoteOptions()"
+                                        class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-orange-500 text-white text-base font-bold shadow-xl shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-orange-500/40 active:scale-95 transition-all duration-200">
+                                        <span>Get a Quote</span>
+                                    </button>
+
+                                    <div id="quoteDropdown"
+                                        class="hidden absolute bottom-full left-0 mb-4 w-full flex-col gap-2 animate-in fade-in slide-in-from-bottom-2 duration-200">
+
+                                        <div class="flex flex-col gap-2 md:hidden">
+                                            <a href="tel:+14804651398"
+                                                class="flex items-center justify-center gap-2 bg-white text-orange-600 border-2 border-orange-500 rounded-lg py-3 shadow-lg font-bold hover:bg-orange-50 transition-colors text-sm">
+                                                <span>📞 Call Us</span>
+                                            </a>
+                                            <a href="sms:+14804651398?body=Hi! I'd like to get a quote."
+                                                class="flex items-center justify-center gap-2 bg-white text-orange-600 border-2 border-orange-500 rounded-lg py-3 shadow-lg font-bold hover:bg-orange-50 transition-colors text-sm">
+                                                <span>💬 Text Us</span>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="hidden md:flex flex-col items-center justify-center bg-white text-orange-600 border-2 border-orange-500 rounded-lg py-3 shadow-lg px-2">
+                                            <span class="text-xs uppercase tracking-widest opacity-70">Call Us
+                                                Directly</span>
+                                            <a href="tel:+14804651398"
+                                                class="font-bold text-md hover:underline decoration-2 underline-offset-4">
+                                                (480) 465-1398
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function toggleQuoteOptions() {
+                                        const menu = document.getElementById('quoteDropdown');
+                                        menu.classList.toggle('hidden');
+                                        menu.classList.toggle('flex');
+                                    }
+
+                                    window.addEventListener('click', function (e) {
+                                        const menu = document.getElementById('quoteDropdown');
+                                        const btn = e.target.closest('button');
+                                        if (!btn && !menu.classList.contains('hidden')) {
+                                            menu.classList.add('hidden');
+                                            menu.classList.remove('flex');
+                                        }
+                                    });
+                                </script>
                                 <a href="#showcase" class="contents">
                                     <button
                                         class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-blue-600 text-white text-base font-bold shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-blue-600/40 active:scale-95 transition-all duration-200">
