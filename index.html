@@ -88,28 +88,39 @@
             </header>
             <main class="flex flex-col">
                 <!-- Hero Section -->
-                <section id="home" class="px-6 md:px-20 py-12 md:py-20 lg:py-24">
-                    <div class="max-w-300 mx-auto flex flex-col lg:flex-row gap-12 items-center">
-                        <div class="flex flex-col gap-8 flex-1">
+                <section id="home"
+                    class="relative overflow-hidden min-h-[100svh] flex items-center px-6 md:px-20 py-12 md:py-20 lg:py-24">
+
+                    <div class="absolute inset-0 z-0">
+                        <img class="w-full h-full object-cover"
+                            data-alt="Modern industrial factory setting with steel components"
+                            src="/gallery/oven.png" />
+                        <div class="absolute inset-0 bg-slate-900/60 bg-gradient-to-r from-slate-900/90 to-transparent">
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 max-w-300 mx-auto w-full">
+                        <div class="flex flex-col gap-8 max-w-3xl">
                             <div class="flex flex-col gap-4">
                                 <div
-                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-yellow/10 text-orange-700 dark:text-orange-400 text-xs font-bold uppercase tracking-wider border border-accent-yellow/20">
+                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-yellow/20 text-orange-300 text-xs font-bold uppercase tracking-wider border border-accent-yellow/30 w-fit backdrop-blur-sm">
                                     <span class="material-symbols-outlined text-sm">location_on</span>
                                     55 N. Pomeroy, Mesa, AZ
                                 </div>
                                 <h1
-                                    class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
-                                    Premium <span class="text-primary">Industrial Coatings</span> &amp; Protection
+                                    class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white">
+                                    Premium <span class="text-primary">Industrial Coatings</span> & Protection
                                 </h1>
-                                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-150 leading-relaxed">
+                                <p class="text-lg md:text-xl text-slate-200 max-w-150 leading-relaxed drop-shadow-sm">
                                     High-performance industrial solutions built for the most demanding environments. We
                                     provide superior durability through advanced coating technologies.
                                 </p>
                             </div>
+
                             <div class="flex flex-wrap gap-4">
                                 <div class="relative inline-block">
                                     <button onclick="toggleQuoteOptions()"
-                                        class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-orange-500 text-white text-base font-bold shadow-xl shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-orange-500/40 active:scale-95 transition-all duration-200">
+                                        class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-orange-500 text-white text-base font-bold shadow-xl shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-0.5 active:scale-95 transition-all duration-200">
                                         <span>Get a Quote</span>
                                     </button>
 
@@ -118,12 +129,8 @@
 
                                         <div class="flex flex-col gap-2 md:hidden">
                                             <a href="tel:+14804651398"
-                                                class="flex items-center justify-center gap-2 bg-white text-orange-600 border-2 border-orange-500 rounded-lg py-3 shadow-lg font-bold hover:bg-orange-50 transition-colors text-sm">
+                                                class="flex items-center justify-center gap-2 bg-white text-orange-600 border-2 border-orange-500 rounded-lg py-3 shadow-lg font-bold text-sm">
                                                 <span>📞 Call Us</span>
-                                            </a>
-                                            <a href="sms:+14804651398?body=Hi! I'd like to get a quote."
-                                                class="flex items-center justify-center gap-2 bg-white text-orange-600 border-2 border-orange-500 rounded-lg py-3 shadow-lg font-bold hover:bg-orange-50 transition-colors text-sm">
-                                                <span>💬 Text Us</span>
                                             </a>
                                         </div>
 
@@ -136,172 +143,35 @@
                                                 (480) 465-1398
                                             </a>
                                         </div>
-
                                     </div>
                                 </div>
 
-                                <script>
-                                    function toggleQuoteOptions() {
-                                        const menu = document.getElementById('quoteDropdown');
-                                        menu.classList.toggle('hidden');
-                                        menu.classList.toggle('flex');
-                                    }
-
-                                    window.addEventListener('click', function (e) {
-                                        const menu = document.getElementById('quoteDropdown');
-                                        const btn = e.target.closest('button');
-                                        if (!btn && !menu.classList.contains('hidden')) {
-                                            menu.classList.add('hidden');
-                                            menu.classList.remove('flex');
-                                        }
-                                    });
-                                </script>
                                 <a href="#showcase" class="contents">
                                     <button
-                                        class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-blue-600 text-white text-base font-bold shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-blue-600/40 active:scale-95 transition-all duration-200">
+                                        class="flex min-w-40 cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-blue-600 text-white text-base font-bold shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-0.5 active:scale-95 transition-all duration-200">
                                         <span>View Projects</span>
                                     </button>
                                 </a>
                             </div>
                         </div>
-                        <div class="flex-1 w-full">
-                            <div
-                                class="relative w-full aspect-4/3 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
-                                <img class="w-full h-full object-cover"
-                                    data-alt="Modern industrial factory setting with steel components"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlaK4CIhwRPsZNp4ltdP5KfdHfBvgroG0oBtLAS6zg3YD_fA7Smxi6oBtm6mc9QX_5wVTwvcEsWtSvOskhXw-Va_PCFqGRgJ1-VaIWUDYWHB9aZRysbJ9J9S1z4AL2TjfBSLhxJX8HDcb9bI5IgJoHt5L1Gjblnj9ZeoJop_6w8W3efv8GKHzdbUSiNEURAn39t0Mg85Vmm1MDltqTMoiP-3OXy2XvU5sWzR60mTNYDlOFbui2ine4lklDrZWyeAWJ4PlDANaRpw" />
-                                <div class="absolute inset-0 bg-linear-to-tr from-primary/20 to-transparent"></div>
-                            </div>
-                        </div>
                     </div>
-                </section>
-                <!-- Expertise Section -->
-                <section id="expertise"
-                    class="bg-white dark:bg-slate-900/50 py-20 px-6 md:px-20 border-y border-slate-100 dark:border-slate-800">
-                    <div class="max-w-300 mx-auto">
-                        <div class="flex flex-col gap-2 mb-12">
-                            <h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">Our Expertise
-                            </h2>
-                            <div class="h-1.5 w-20 bg-accent-yellow rounded-full"></div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <!-- Card 1 -->
-                            <div
-                                class="group flex flex-col gap-5 p-6 rounded-2xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all hover:shadow-xl">
-                                <div
-                                    class="w-full aspect-video rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                                    <img class="w-full h-full object-cover"
-                                        data-alt="Extreme heat welding and industrial fire"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrDlzrZrUxHrX9sctyMIPO7TDYiQJvZm8zDLT6wnNK3b9NIfyuj8IkQ6wZaFA40Ymyu2g-cWXtreeLD7hvPZRMduxeHCEf8LuE9OrOrgH-23YJqjjlGXDy03g4oOjH_78iz3P8WujCMSnyRdyYyq1YTxefUDsUZCia5qNOT2R1dnjBB7qogZPg6ROnEZxCzlnQ9SYZgje12rjAbQ1qhHsHig14KgQOUfptIlYwrJt9BaOfbxmNoWcdTTi0VfaoC_REnFIrPBQqA" />
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Heat Resistance
-                                    </h3>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Withstanding extreme
-                                        thermal stress and maintaining integrity under high-temperature operations.</p>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div
-                                class="group flex flex-col gap-5 p-6 rounded-2xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all hover:shadow-xl">
-                                <div
-                                    class="w-full aspect-video rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                                    <img class="w-full h-full object-cover"
-                                        data-alt="Rusted metal vs coated metal comparison"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9tuHtVwPHlcB_PX6CPodMa3Wb9wwCjq9KZWK6BgpqQ9twRR88bMf3PeapFlojUGYsSq2Ck8fsxXNnCx6vy10HH7SkvXFxUOSp_nygWXnJOgjx8ZD94Kt0r32prF1rwTLBQT9EK5EHUmaZvtlFWphXtwn7pun_1VKZXNaIyfCLe_TFOFqBkOqp0Ad6VMSbLbyVN25cuPs-BsY57fpd3cdrax8GFoGkrrNuyx4U0LOXERfgxgnjd0fNjUCoEOr55Apad5zFCZagWw" />
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Corrosion Control
-                                    </h3>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Advanced chemical
-                                        barrier protection designed to extend the lifespan of your critical assets.</p>
-                                </div>
-                            </div>
-                            <!-- Card 3 -->
-                            <div
-                                class="group flex flex-col gap-5 p-6 rounded-2xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all hover:shadow-xl">
-                                <div
-                                    class="w-full aspect-video rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                                    <img class="w-full h-full object-cover"
-                                        data-alt="Industrial steel heavy duty machinery"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuClggmCoU6PmvMZe2sZK0FTisD6ihBrHa7Fz0Kff4wlM74mD8O6SenS8xsxA7H19QMzxNyHpwcUZ0eb5JEvCiZEAKzc1oeZwkfhzSSFmvDK7ogJRrU1bOgsP1iFA-HfiS0Fm_Z0cmAnhsg6L25d5vdqO8sELWyYG33m9LXxamaMoQixxwLDHGRPFD22AhJ40TesHmkqt10pMtAQvO2T6nhKwoVyF5P83KUDhHkpaFwytxdCyIgz6m5h8Dn6Ag4QbOE8K1699NT30w" />
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Extreme Durability
-                                    </h3>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Built for high-impact
-                                        industrial use, resistant to abrasion, impact, and mechanical wear.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="py-20 px-6 md:px-20 bg-slate-50 dark:bg-slate-900/30">
-                    <div class="max-w-300 mx-auto">
-                        <div class="flex flex-col lg:flex-row gap-12 items-center">
-                            <div class="flex flex-col gap-6 flex-1">
-                                <div class="flex flex-col gap-4">
-                                    <h2
-                                        class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white">
-                                        Our Specialized <span class="text-primary">Capabilities</span></h2>
-                                    <div class="h-1.5 w-24 bg-secondary-blue rounded-full"></div>
-                                </div>
-                                <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-                                    From small custom projects to large-scale production, our 24' oven handles it all.
-                                    We offer everything from standard finishes to exotic candy colors, plus in-house
-                                    sandblasting. Quality control and quick turnaround are our top priorities.
-                                </p>
-                                <div class="flex gap-4 pt-4">
-                                    <div class="flex flex-col gap-1">
-                                        <span class="text-3xl font-black text-primary">24'</span>
-                                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Oven
-                                            Capacity</span>
-                                    </div>
-                                    <div class="w-px h-12 bg-slate-200 dark:bg-slate-700 mx-4"></div>
-                                    <div class="flex flex-col gap-1">
-                                        <span class="text-3xl font-black text-secondary-blue">100%</span>
-                                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">In-House
-                                            Prep</span>
-                                    </div>
-                                    <div class="w-px h-12 bg-slate-200 dark:bg-slate-700 mx-4"></div>
-                                    <div class="flex flex-col gap-1">
-                                        <span class="text-3xl font-black text-accent-yellow">Fast</span>
-                                        <span
-                                            class="text-xs font-bold uppercase tracking-wider text-slate-500">Turnaround</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-1 grid grid-cols-2 gap-4 w-full">
-                                <div
-                                    class="aspect-square rounded-2xl bg-primary/10 flex flex-col items-center justify-center p-6 text-center border border-primary/20">
-                                    <span
-                                        class="material-symbols-outlined text-4xl text-primary mb-3">precision_manufacturing</span>
-                                    <span class="text-sm font-bold text-slate-900 dark:text-white">Large Scale
-                                        Production</span>
-                                </div>
-                                <div
-                                    class="aspect-square rounded-2xl bg-secondary-blue/10 flex flex-col items-center justify-center p-6 text-center border border-secondary-blue/20">
-                                    <span
-                                        class="material-symbols-outlined text-4xl text-secondary-blue mb-3">palette</span>
-                                    <span class="text-sm font-bold text-slate-900 dark:text-white">Exotic Candy
-                                        Colors</span>
-                                </div>
-                                <div
-                                    class="aspect-square rounded-2xl bg-accent-yellow/10 flex flex-col items-center justify-center p-6 text-center border border-accent-yellow/20">
-                                    <span
-                                        class="material-symbols-outlined text-4xl text-accent-yellow mb-3">verified_user</span>
-                                    <span class="text-sm font-bold text-slate-900 dark:text-white">Strict Quality
-                                        Control</span>
-                                </div>
-                                <div
-                                    class="aspect-square rounded-2xl bg-slate-200/50 dark:bg-slate-800 flex flex-col items-center justify-center p-6 text-center border border-slate-300 dark:border-slate-700">
-                                    <span
-                                        class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 mb-3">speed</span>
-                                    <span class="text-sm font-bold text-slate-900 dark:text-white">Rapid Delivery</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <script>
+                        function toggleQuoteOptions() {
+                            const menu = document.getElementById('quoteDropdown');
+                            menu.classList.toggle('hidden');
+                            menu.classList.toggle('flex');
+                        }
+
+                        window.addEventListener('click', function (e) {
+                            const menu = document.getElementById('quoteDropdown');
+                            const btn = e.target.closest('button');
+                            if (!btn && menu && !menu.classList.contains('hidden')) {
+                                menu.classList.add('hidden');
+                                menu.classList.remove('flex');
+                            }
+                        });
+                    </script>
                 </section>
                 <!-- Services Section -->
                 <section id="services" class="py-20 px-6 md:px-20">
@@ -383,33 +253,6 @@
                         </div>
                     </div>
                 </section>
-                <!-- Map/Contact Component -->
-                <section class="py-12 px-6 md:px-20 bg-slate-100 dark:bg-slate-950/50">
-                    <div
-                        class="max-w-300 mx-auto rounded-3xl overflow-hidden bg-white dark:bg-slate-900 shadow-xl flex flex-col md:flex-row">
-                        <div class="flex-1 p-10 md:p-16 flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold mb-4">Visit Our Facility</h3>
-                            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                                Located in the heart of Mesa, our state-of-the-art coating facility is equipped to
-                                handle projects of any scale.
-                            </p>
-                            <div class="flex items-center gap-4 text-slate-700 dark:text-slate-300">
-                                <span class="material-symbols-outlined text-primary">pin_drop</span>
-                                <span>55 N. Pomeroy, Mesa, AZ 85201</span>
-                            </div>
-                        </div>
-                        <div class="flex-1 h-75 md:h-auto min-h-75 bg-slate-200 relative overflow-hidden">
-                            <img class="w-full h-full object-cover"
-                                data-alt="Map view of Mesa Arizona industrial district" data-location="Mesa, AZ"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHub-fePLisY9EMtbkR8TrI0dzHTNDZ6VU2TuhQ8JFbxNZFIQpaUwjoPANE4Hb6Vf5vbqhSNImzcC1Ro9SybriO9LDa2M_MV6dXaJQ94r26PZ24TjNHtwfcB2UKyjNePJMKFbeOkmwc7pjfm1oIMKxW7cUp_od0uNON0V38-2jVZHfVavg0YrIFX4mJ2CUneqXVa8PeWIU5UUOm-r7Iq-AYVI4XAUrLvcnvG1YfPKhkK5zb3frb7lm4tJYkuyrpdK383N97J3jPQ" />
-                            <div class="absolute inset-0 bg-secondary-blue/10 pointer-events-none"></div>
-                            <div
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 rounded-full bg-primary/20 flex items-center justify-center animate-pulse">
-                                <div class="size-4 rounded-full bg-primary shadow-lg shadow-primary/50"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 <!-- Filters -->
                 <section id="showcase"
@@ -450,12 +293,10 @@
 
                         <div
                             class="group flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 pswp-gallery">
-                            <a href="https://lh3.googleusercontent.com/aida-public/AB6AXuCsD3oPVmUan8UQ1LAQDaCkICAMCZDy_WR-9mfGptC1modORSGkEB_7TedgYjhouXgGY2bUgDsYRhUt201vnreYQXeglTEhuP6CWswSuWo55-M4Eacl3rOT9tMLgI4mT5DlGp7cX4pnyBCbmtbALmd5RHbxvHzc31a6_dwMOKQZajl1KSX_73Cyt0w-8-jWyy5LVJvAtoRuaaYSPIBmDHgPgM9OTsZBBfpT14iBOTGN1D3-8oD2IG84prlEIQIfD2Or2k8Rq2qpVQ"
-                                data-pswp-width="1200" data-cropped="true" data-pswp-height="800" target="_blank"
-                                class="relative h-64 overflow-hidden block">
+                            <a href="/gallery/oven.png" data-pswp-width="1200" data-cropped="true"
+                                data-pswp-height="800" target="_blank" class="relative h-64 overflow-hidden block">
                                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsD3oPVmUan8UQ1LAQDaCkICAMCZDy_WR-9mfGptC1modORSGkEB_7TedgYjhouXgGY2bUgDsYRhUt201vnreYQXeglTEhuP6CWswSuWo55-M4Eacl3rOT9tMLgI4mT5DlGp7cX4pnyBCbmtbALmd5RHbxvHzc31a6_dwMOKQZajl1KSX_73Cyt0w-8-jWyy5LVJvAtoRuaaYSPIBmDHgPgM9OTsZBBfpT14iBOTGN1D3-8oD2IG84prlEIQIfD2Or2k8Rq2qpVQ"
-                                    alt="24' Oven Industrial Coating" />
+                                    src="/gallery/oven.png" alt="24' Oven Industrial Coating" />
                                 <div
                                     class="absolute top-4 left-4 bg-accent-yellow px-3 py-1 rounded text-[10px] font-black uppercase text-slate-900">
                                     Industrial</div>
@@ -465,28 +306,26 @@
                                 </div>
                             </a>
                             <!-- Hidden gallery images -->
-                            <a href="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
+                            <!-- <a href="/gallery/greenTube.png" data-pswp-width="1200" data-pswp-height="800"
+                                target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1504917595217-d4bf063327cb?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1522881113591-5fad77ef96a2?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
+                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a> -->
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">24' Oven
                                     Industrial Coating</h3>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">High-temperature protective
-                                    coating applied to large-scale aerospace components.</p>
+                                    coating applied to large-scale components.</p>
                             </div>
                         </div>
 
                         <div
                             class="group flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 pswp-gallery">
-                            <a href="https://lh3.googleusercontent.com/aida-public/AB6AXuCLoelsMl-H_V2GMjS-iCiGxOX-CNEj_FKTrPTn1qRAjM0TCi6eRb5I1EOcu_4CjqjPgEySdkhSR1ZnQVd_JAfU795L-ibbwvq39uXQjepMj50vehzE5bjN5LywH4HxuU6UCqGmISvbGu-OfeStCuX9QXDMgVcf2QH5bjq_E9QWia79UOZc3rg7bTBAWFdGXtS4sq5yo7WjoPAY1raUWVUXAyKkBbeWPeTHrkDk99fCh16JiqpBeuHHvrHsx4BJwUtrl6wXfK8XyQ"
-                                data-pswp-width="1200" data-cropped="true" data-pswp-height="800" target="_blank"
-                                class="relative h-64 overflow-hidden block">
+                            <a href="/gallery/goldCan.png" data-pswp-width="1200" data-cropped="true"
+                                data-pswp-height="800" target="_blank" class="relative h-64 overflow-hidden block">
                                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLoelsMl-H_V2GMjS-iCiGxOX-CNEj_FKTrPTn1qRAjM0TCi6eRb5I1EOcu_4CjqjPgEySdkhSR1ZnQVd_JAfU795L-ibbwvq39uXQjepMj50vehzE5bjN5LywH4HxuU6UCqGmISvbGu-OfeStCuX9QXDMgVcf2QH5bjq_E9QWia79UOZc3rg7bTBAWFdGXtS4sq5yo7WjoPAY1raUWVUXAyKkBbeWPeTHrkDk99fCh16JiqpBeuHHvrHsx4BJwUtrl6wXfK8XyQ"
-                                    alt="Exotic Candy Apple Rims" />
+                                    src="/gallery/goldCan.png" alt="Exotic Candy Apple Rims" />
                                 <div
                                     class="absolute top-4 left-4 bg-primary px-3 py-1 rounded text-[10px] font-black uppercase text-white">
                                     Custom Finish</div>
@@ -496,17 +335,17 @@
                                 </div>
                             </a>
                             <!-- Hidden gallery images -->
-                            <a href="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=1200"
+                            <!-- <a href="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1616880295874-83955e8c1f93?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
+                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a> -->
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Exotic
-                                    Candy Apple Rims</h3>
+                                    Gold & Metalic Colors</h3>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Three-stage powder process
-                                    including base chrome and candy red mid-coat.</p>
+                                    including Gold and other metallic colors.</p>
                             </div>
                         </div>
 
@@ -527,12 +366,12 @@
                                 </div>
                             </a>
                             <!-- Hidden gallery images -->
-                            <a href="https://images.unsplash.com/photo-1563603417770-ce29e61db1d6?w=1200"
+                            <!-- <a href="https://images.unsplash.com/photo-1563603417770-ce29e61db1d6?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1621644081035-7c152a5146d9?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
+                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a> -->
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Vintage
                                     Lathe Restoration</h3>
@@ -558,48 +397,17 @@
                                 </div>
                             </a>
                             <!-- Hidden gallery images -->
-                            <a href="https://images.unsplash.com/photo-1565439390118-c266fed36c74?w=1200"
+                            <!-- <a href="https://images.unsplash.com/photo-1565439390118-c266fed36c74?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
+                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a> -->
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">OEM
                                     Component Run</h3>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">High-volume batch coating for
-                                    structural brackets across 5,000+ units.</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="group flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 pswp-gallery">
-                            <a href="https://lh3.googleusercontent.com/aida-public/AB6AXuB8TdzJKSwjUb-rBscyPahOGN4zDCQNGES4iSN5JMDjDvhHt_A3qfDv-ke9yiT1F4khv_8FVbnqcezGSHa3WTLDflW7YfezT17eQcTa8_EwuaeO7bAiF3m47VSgasy4BCmf6wG4nrJCfGfuBH2tGmyfzvVQfdvvSIRCI5Om70NfJISt-rMnS5kUk7fYpazqKPOACgDi03ctSI87jIgfPm46fm5VPsTxHGUj2vFpSt5LBawQocyupXIeS63QvCHVlL24ZLR14f7k5g"
-                                data-pswp-width="1200" data-cropped="true" data-pswp-height="800" target="_blank"
-                                class="relative h-64 overflow-hidden block">
-                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8TdzJKSwjUb-rBscyPahOGN4zDCQNGES4iSN5JMDjDvhHt_A3qfDv-ke9yiT1F4khv_8FVbnqcezGSHa3WTLDflW7YfezT17eQcTa8_EwuaeO7bAiF3m47VSgasy4BCmf6wG4nrJCfGfuBH2tGmyfzvVQfdvvSIRCI5Om70NfJISt-rMnS5kUk7fYpazqKPOACgDi03ctSI87jIgfPm46fm5VPsTxHGUj2vFpSt5LBawQocyupXIeS63QvCHVlL24ZLR14f7k5g"
-                                    alt="Illusion Violet Moto Frame" />
-                                <div
-                                    class="absolute top-4 left-4 bg-primary px-3 py-1 rounded text-[10px] font-black uppercase text-white">
-                                    Custom Finish</div>
-                                <div
-                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
-                                </div>
-                            </a>
-                            <!-- Hidden gallery images -->
-                            <a href="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
-                            <a href="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
-                            <a href="https://images.unsplash.com/photo-1599324546416-5b4fc27bba09?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Illusion
-                                    Violet Moto Frame</h3>
-                                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Specialty color-shift finish
-                                    that changes from violet to blue.</p>
+                                    structural brackets and metal grates.</p>
                             </div>
                         </div>
 
@@ -620,17 +428,44 @@
                                 </div>
                             </a>
                             <!-- Hidden gallery images -->
-                            <a href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200"
+                            <!-- <a href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1537726233481-9b6d80ffcc31?w=1200"
                                 data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
                             <a href="https://images.unsplash.com/photo-1504917595217-d4bf063327cb?w=1200"
-                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a>
+                                data-pswp-width="1200" data-pswp-height="800" target="_blank" class="hidden"></a> -->
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Heavy
                                     Steel Coating</h3>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Structural steel coating
-                                    designed for extreme environmental resistance.</p>
+                                    designed for extreme environmental resistance and playground equipment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Map/Contact Component -->
+                <section class="py-12 px-6 md:px-20 bg-slate-100 dark:bg-slate-950/50">
+                    <div
+                        class="max-w-300 mx-auto rounded-3xl overflow-hidden bg-white dark:bg-slate-900 shadow-xl flex flex-col md:flex-row">
+                        <div class="flex-1 p-10 md:p-16 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Visit Our Facility</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                                Located in the heart of Mesa, our state-of-the-art coating facility is equipped to
+                                handle projects of any scale.
+                            </p>
+                            <div class="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-primary">pin_drop</span>
+                                <span>55 N. Pomeroy, Mesa, AZ 85201</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 h-75 md:h-auto min-h-75 bg-slate-200 relative overflow-hidden">
+                            <img class="w-full h-full object-cover"
+                                data-alt="Map view of Mesa Arizona industrial district" data-location="Mesa, AZ"
+                                src="/gallery/shopExt.png" />
+                            <div class="absolute inset-0 bg-secondary-blue/10 pointer-events-none"></div>
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 rounded-full bg-primary/20 flex items-center justify-center animate-pulse">
+                                <div class="size-4 rounded-full bg-primary shadow-lg shadow-primary/50"></div>
                             </div>
                         </div>
                     </div>
@@ -641,9 +476,7 @@
                 class="py-12 px-6 md:px-20 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">
                 <div class="max-w-300 mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
                     <div class="flex items-center gap-3">
-                        <div class="size-8 rounded bg-primary flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined text-lg">local_fire_department</span>
-                        </div>
+
                         <span class="font-bold text-slate-900 dark:text-white">Heatwave Coatings LLC</span>
                     </div>
                     <div class="flex gap-10 text-sm font-medium">
@@ -652,7 +485,7 @@
                         <a class="hover:text-primary transition-colors" href="#">Career</a>
                     </div>
                     <div class="text-sm">
-                        © 2024 Heatwave Coatings LLC. All rights reserved.
+                        © 2026 Heatwave Coatings LLC. All rights reserved.
                     </div>
                 </div>
             </footer>
